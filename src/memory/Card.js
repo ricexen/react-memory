@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './style/card.css'
 
+var ID_COUNTER = 1;
+
 class Card extends Component {
 
   constructor(){
@@ -14,6 +16,7 @@ class Card extends Component {
       flipped: false
     }
     this.flip = this.flip.bind(this)
+    this.key = ID_COUNTER++;
   }
 
   getFront(){
@@ -30,7 +33,7 @@ class Card extends Component {
 
   render() {
     return (
-      <div className={this.style.card + (this.state.flipped ? ' flipped' : '')} onClick={this.flip} title="flip">
+      <div key={this.key.toString()} className={this.style.card + (this.state.flipped ? ' flipped' : '')} onClick={this.flip} title="flip">
         <div className={this.style.front}>
           <img src={this.getFront()}/>
         </div>

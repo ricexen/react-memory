@@ -2,3 +2,7 @@
   position: relative;
   float: left;
 }
+
+body{
+  padding: 10px;
+}

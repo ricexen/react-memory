@@ -5,12 +5,13 @@ import './App.css'
 
 class App extends Component {
   render() {
-    var memory = Memory
-    var card = <Card imgFront="blue eyes.jpg" imgBack="back.jpg" />
+    var card = <Card key="1" imgFront="blue eyes.jpg" imgBack="back.jpg" />
+    var cards = [card]
+    var memory = <Memory cards={cards} />
     return (
       <div className="game">
         <h1>Memory Game</h1>
-        {card}
+        {memory}
       </div>
     );
   }

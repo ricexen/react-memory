@@ -7,20 +7,21 @@ class Memory extends Component {
     this.style = {
       memory: "memory",
       grid: "grid",
-      gridCount: "x3",
+      count: "x3",
     }
-    this.cards = []
-    this.addCard = this.addCard.bind(this)
   }
 
-  addCard(card){
-    this.cards.push(card)
+  renderCards(){
+    return this.props.cards.map(function(card) {
+      return card;
+    })
   }
 
   render() {
     return (
       <div className={this.style.memory}>
-        <div className={this.style.grid + "-" + this.style.gridCount}>
+        <div className={this.style.grid + "-" + this.style.count}>
+          {this.renderCards()}
         </div>
       </div>
     );

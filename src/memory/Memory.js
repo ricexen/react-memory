@@ -10,6 +10,7 @@ class Memory extends Component {
       gridCount: "x3",
     }
     this.cards = []
+    this.addCard = this.addCard.bind(this)
   }
 
   addCard(card){

@@ -10,6 +10,10 @@ class Card extends Component {
       front: "front",
       back: "back",
     }
+    this.state = {
+      flipped: false
+    }
+    this.flip = this.flip.bind(this)
   }
 
   getFront(){
@@ -19,9 +23,14 @@ class Card extends Component {
     return require('./img/'+this.props.imgBack)
   }
 
+  flip(){
+    const currentState = this.state.flipped
+    this.setState({flipped: !currentState})
+  }
+
   render() {
     return (
-      <div className={this.style.card} id={this.id}>
+      <div className={this.style.card + (this.state.flipped ? ' flipped' : '')} onClick={this.flip} title="flip">
         <div className={this.style.front}>
           <img src={this.getFront()}/>
         </div>

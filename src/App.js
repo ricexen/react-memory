@@ -5,7 +5,7 @@ import './App.css'
 
 class App extends Component {
   render() {
-    var card = <Card key="1" imgFront="blue eyes.jpg" imgBack="back.jpg" />
+    var card = <Card key="1" imgFront="blue eyes.jpg"/>
     var cards = [card]
     var memory = <Memory cards={cards} />
     return (
